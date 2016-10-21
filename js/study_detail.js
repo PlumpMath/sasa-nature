@@ -46,6 +46,9 @@ $(document).ready(function()
       else if(str=='bronze') {
         $('#medal-bronze-info').toggle();
       }
+      else {
+        $('#medal-info').toggle();
+      }
     }
 
     $("#show-paper-btn").click(function() {
