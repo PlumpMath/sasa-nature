@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>2016 SASA 인문자연탐사</title>
+
+    <!--jQuery & Bootstrap import-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!--End jQuery & Bootstrap import-->
+    <script src="/js/pdfobject.js"></script>
+    <!--HTML5 support for IE8-->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!--End HTML5 support for IE8-->
+
+    <script src="js/study_detail.js"></script>
+    <link rel="stylesheet" href="css/study_detail.css">
+  </head>
+  <body>
+    <div id="navbar">
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarCollapse" aria-expanded="false" aria-controls="navbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">SASA 자연탐사</a>
+          </div>
+          <div id="navbarCollapse" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="index.html">홈</a></li>
+              <li><a href="list_studies.html">연구 목록 보기</a></li>
+              <li><a href="about.html">정보</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="content">
+      <div id="medal-info" class="alert alert-info" role="alert">
+        <div id="medal-gold-info">
+          이 연구는 <strong>교내대회 금상</strong> 수상작입니다.
+        </div>
+        <div id="medal-silver-info">
+          이 연구는 <strong>교내대회 은상</strong> 수상작입니다.
+        </div>
+        <div id="medal-bronze-info">
+          이 연구는 <strong>교내대회 동상</strong> 수상작입니다.
+        </div>
+      </div>
+      <h1 id="study-title">잠시 기다려주세요..</h1>
+      <br />
+      <div id="study-detail" />
+        <p class="study-detail-title">
+          저자
+        </p>
+        <p id="study-author" class="study-detail-text">
+        </p>
+        <p class="study-detail-title">
+          장소
+        </p>
+        <p id="study-location" class="study-detail-text">
+        </p>
+        <p class="study-detail-title">
+          요약
+        </p>
+        <p id="study-abstract" class="study-detail-text">
+        </p>
+        <p>
+          <button type="button" id="show-paper-btn" class="btn btn-default">보고서 보기</button>
+          <button type="button" id="download-paper-btn" class="btn btn-info">PDF 다운로드</button>
+          <button type="button" id="download-ppt-btn" class="btn btn-success">발표자료 다운로드</button>
+          <button type="button" id="download-poster-btn" class="btn btn-danger">포스터 다운로드</button>
+        </p>
+      </div>
+      <div id="pdf-wrapper">
+      </div>
+    </div>
+  </body>
+</html>
