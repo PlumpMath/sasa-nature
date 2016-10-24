@@ -61,7 +61,7 @@ $(document).ready(function()
       }
     });
     $('#download-paper-btn').click(function() {
-      var win = window.open("/docs/"+documentID+".pdf",'_blank');
+      var win = window.open("docs/"+documentID+".pdf",'_blank');
       if(win) {
         win.focus();
       }
