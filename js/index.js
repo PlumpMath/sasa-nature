@@ -48,28 +48,34 @@ $(document).on('shown.bs.modal','#modal-loc', function () {
 });
 
 window.onload = function() {
-  $('#mapCoords').click(function() {
+  /*$('#mapCoords').click(function() {
     var ln = mainMap.getCenter();
     console.log('lat: '+ln.lat()+',lng: '+ln.lng()+', zoom: '+mainMap.getZoom() );
-  });
-  var p = new Promise(function(resolve, reject) {
-    $.getJSON("data/study_index.json", function(data2) {
-      study_index = data2;
-      resolve();
+  });*/
+    //fuck ie, why isn't promise supported?
+    $.ajax({
+       type: "GET",
+       url: "data/study_index.json",
+       dataType: "json",
+       success: function(data2) {
+         study_index = data2;
+         $.ajax({
+            type: "GET",
+            url: "data/points.json",
+            dataType: "json",
+            success: function(data) {
+              locPoints = data;
+              locPoints.forEach(function(element) {
+                var marker = new google.maps.Marker({
+                  position: {lat: element.lat, lng: element.lng},
+                  map: mainMap
+                });
+                marker.addListener('click', function() {
+                  openInfoWindow(element.id-1);
+                });
+              });
+            }
+         });
+        }
     });
-  });
-  p.then(function(result) {
-    $.getJSON("data/points.json", function(data) {
-      locPoints = data;
-      locPoints.forEach(function(element) {
-        var marker = new google.maps.Marker({
-          position: {lat: element.lat, lng: element.lng},
-          map: mainMap
-        });
-        marker.addListener('click', function() {
-          openInfoWindow(element.id-1);
-        });
-      });
-    });
-  });
 };
