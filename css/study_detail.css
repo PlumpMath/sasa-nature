@@ -1,6 +1,5 @@
 body { height: 100%; width: 100%; margin: 0; padding: 0; padding-top: 51px; }
 html { height: 100%; width: 100%; }
-
 .content {
   position:absolute;
   top:60px;
@@ -16,6 +15,7 @@ html { height: 100%; width: 100%; }
 }
 #pdf-wrapper {
    left:0; right:0; bottom:0px; height: 100%;
+   display: none;
 }
 h1 {margin: 3px}
 .study-detail-text {
@@ -24,4 +24,16 @@ h1 {margin: 3px}
 .study-detail-title {
   font-size: 145%;
   font-weight: bold;
+}
+#medal-info {
+  display: none;
+}
+#medal-gold-info {
+  display: none;
+}
+#medal-silver-info {
+  display: none;
+}
+#medal-bronze-info {
+  display: none;
 }
