@@ -12,7 +12,7 @@ function initMap() {
     zoom: 16,
     mapTypeControl: false,
     streetViewControl: false
-  })
+  });
   google.maps.event.addListener(mainMap, "click", function (e) {
       console.log('lat: '+e.latLng.lat()+',lng: '+e.latLng.lng())
   });
