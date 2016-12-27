@@ -34,16 +34,7 @@ $(document).ready(function()
     $('#study-location').html(locations.substring(0,locations.length-2));
 
     $('#study-abstract').html(doc.abstract);
-
-    $("#show-paper-btn").click(function() {
-      $('#pdf-wrapper').toggle();
-      if($("#show-paper-btn").css("display") == 'none') {
-        $('#show-paper-btn').html("보고서 보기");
-      }
-      else {
-        $("#show-paper-btn").html("보고서 숨기기");
-      }
-    });
+    $('#pdf-wrapper').toggle();
     $('#download-paper-btn').click(function() {
       var win = window.open("docs/"+docFileName,'_blank');
       if(win) {
