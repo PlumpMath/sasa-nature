@@ -65,9 +65,7 @@ function getParams() {
     for(var i=0 ; i < size ; i++) {
         key = params[i].split("=")[0];
         value = params[i].split("=")[1];
-
         param[key] = value;
     }
-
     return param;
 }
