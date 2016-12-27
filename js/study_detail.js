@@ -18,7 +18,8 @@ $(document).ready(function()
     }).fail(function() {reject();});
   });
   p.then(function(result) {
-    PDFObject.embed("docs/"+documentID+".pdf", "#pdf-wrapper");
+    var docFileName = doc["fileName"];
+    PDFObject.embed("docs/"+docFileName, "#pdf-wrapper");
 
     $('#study-title').html(doc["name"]);
 
@@ -58,7 +59,7 @@ $(document).ready(function()
       }
     });
     $('#download-paper-btn').click(function() {
-      var win = window.open("/docs/"+documentID+".pdf",'_blank');
+      var win = window.open("docs/"+docFileName,'_blank');
       if(win) {
         win.focus();
       }
