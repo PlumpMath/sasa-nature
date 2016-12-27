@@ -52,14 +52,9 @@ window.onload = function() {
     var ln = mainMap.getCenter();
     console.log('lat: '+ln.lat()+',lng: '+ln.lng()+', zoom: '+mainMap.getZoom() );
   });
-  var p = new Promise(function(resolve, reject) {
-    $.getJSON("data/study_index.json", function(data2) {
+  $.getJSON("data/study_index.json", function(data2) {
       study_index = data2;
-      resolve();
-    });
-  });
-  p.then(function(result) {
-    $.getJSON("data/points.json", function(data) {
+      $.getJSON("data/points.json", function(data) {
       locPoints = data;
       locPoints.forEach(function(element) {
         var marker = new google.maps.Marker({
@@ -71,5 +66,5 @@ window.onload = function() {
         });
       });
     });
-  });
+  }
 };

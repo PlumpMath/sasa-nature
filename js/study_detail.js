@@ -13,40 +13,33 @@ $(document).ready(function()
       if(doc == null) reject();
       $.getJSON("data/points.json", function(data2) {
         pointInfos = data2;
-        resolve();
+        var docFileName = params["id"]+".pdf";
+        PDFObject.embed("docs/"+docFileName, "#pdf-wrapper");
+
+        $('#study-title').html(doc["name"]);
+
+        var author="", locations="";
+        doc.author.forEach(function(element) {
+          author+=(element+", ");
+        });
+        doc.locations.forEach(function(element) {
+          locations+=(pointInfos[element-1].name+", ");
+        });
+        $('#study-author').html(author.substring(0,author.length-2));
+        $('#study-location').html(locations.substring(0,locations.length-2));
+
+        $('#study-abstract').html(doc.abstract);
+        $('#download-paper-btn').click(function() {
+          var win = window.open("docs/"+docFileName,'_blank');
+          if(win) {
+            win.focus();
+          }
+          else {
+            alert('팝업이 차단되어 있습니다. 팝업을 허용해 주세요.');
+          }
+        });
       });
-    }).fail(function() {reject();});
-  });
-  p.then(function(result) {
-    var docFileName = params["id"]+".pdf";
-    PDFObject.embed("docs/"+docFileName, "#pdf-wrapper");
-
-    $('#study-title').html(doc["name"]);
-
-    var author="", locations="";
-    doc.author.forEach(function(element) {
-      author+=(element+", ");
     });
-    doc.locations.forEach(function(element) {
-      locations+=(pointInfos[element-1].name+", ");
-    });
-    $('#study-author').html(author.substring(0,author.length-2));
-    $('#study-location').html(locations.substring(0,locations.length-2));
-
-    $('#study-abstract').html(doc.abstract);
-    $('#download-paper-btn').click(function() {
-      var win = window.open("docs/"+docFileName,'_blank');
-      if(win) {
-        win.focus();
-      }
-      else {
-        alert('팝업이 차단되어 있습니다. 팝업을 허용해 주세요.');
-      }
-    });
-  },
-  function(error) {
-    alert('잘못된 접근입니다. 문서 아이디를 확인해주세요.');
-    window.history.back();
   });
 });
 
