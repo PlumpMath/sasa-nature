@@ -66,5 +66,5 @@ window.onload = function() {
         });
       });
     });
-  }
+  });
 };
