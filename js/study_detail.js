@@ -35,20 +35,6 @@ $(document).ready(function()
 
     $('#study-abstract').html(doc.abstract);
 
-    if(doc.hasOwnProperty("medal")) {
-      var str = doc["medal"];
-      $('#medal-info').toggle();
-      if(str=='gold') {
-        $('#medal-gold-info').toggle();
-      }
-      else if(str=='silver') {
-        $('#medal-silver-info').toggle();
-      }
-      else if(str=='bronze') {
-        $('#medal-bronze-info').toggle();
-      }
-    }
-
     $("#show-paper-btn").click(function() {
       $('#pdf-wrapper').toggle();
       if($("#show-paper-btn").css("display") == 'none') {
