@@ -34,7 +34,6 @@ $(document).ready(function()
     $('#study-location').html(locations.substring(0,locations.length-2));
 
     $('#study-abstract').html(doc.abstract);
-    $('#pdf-wrapper').toggle();
     $('#download-paper-btn').click(function() {
       var win = window.open("docs/"+docFileName,'_blank');
       if(win) {

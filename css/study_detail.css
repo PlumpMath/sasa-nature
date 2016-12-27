@@ -15,7 +15,6 @@ html { height: 100%; width: 100%; }
 }
 #pdf-wrapper {
    left:0; right:0; bottom:0px; height: 100%;
-   display: none;
 }
 h1 {margin: 3px}
 .study-detail-text {
