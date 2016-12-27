@@ -18,7 +18,7 @@ $(document).ready(function()
     }).fail(function() {reject();});
   });
   p.then(function(result) {
-    var docFileName = doc["fileName"];
+    var docFileName = doc[documentID]+".pdf";
     PDFObject.embed("docs/"+docFileName, "#pdf-wrapper");
 
     $('#study-title').html(doc["name"]);
